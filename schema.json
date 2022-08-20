@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "BasicBadge": {
+            "properties": {
+                "backgroundColor": {
+                    "type": "string"
+                },
+                "icon": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "text": {
+                    "type": "string"
+                },
+                "textColor": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "basic"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "TwoSideBadge": {
+            "properties": {
+                "icon": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "leftBackgroundColor": {
+                    "type": "string"
+                },
+                "leftText": {
+                    "type": "string"
+                },
+                "leftTextColor": {
+                    "type": "string"
+                },
+                "rightBackgroundColor": {
+                    "type": "string"
+                },
+                "rightText": {
+                    "type": "string"
+                },
+                "rightTextColor": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "twoSide"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "default_1": {
+            "properties": {
+                "badges": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "logo": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "redirectUri": {
+                    "type": "string"
+                },
+                "serviceServer": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "default_3": {
+            "properties": {
+                "background": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "default_4": {
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "os": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "properties": {
+        "badges": {
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/BasicBadge"
+                    },
+                    {
+                        "$ref": "#/definitions/TwoSideBadge"
+                    }
+                ]
+            },
+            "type": "array"
+        },
+        "categories": {
+            "items": {
+                "$ref": "#/definitions/default_3"
+            },
+            "type": "array"
+        },
+        "links": {
+            "items": {
+                "$ref": "#/definitions/default_1"
+            },
+            "type": "array"
+        },
+        "servers": {
+            "items": {
+                "$ref": "#/definitions/default_4"
+            },
+            "type": "array"
+        },
+        "title": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+
