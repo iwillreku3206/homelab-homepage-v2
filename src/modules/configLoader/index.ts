@@ -1,4 +1,4 @@
-import Config, { ConfigExternal, ConfigInternal } from './config'
+import Config, { ConfigInternal } from './config'
 import fs from 'fs'
 import path from 'path'
 import AppLink, { AppLinkInternal } from '../../_types/AppLink'

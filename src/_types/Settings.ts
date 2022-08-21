@@ -5,4 +5,4 @@ export default interface Settings {
 }
 export type ColorMode = 'light' | 'dark' | 'system'
 export type DisplayMode = 'compact' | 'perServer' | 'perCategory'
-export type LinkDisplayMode = 'icons' | 'cards'
+export type LinkDisplayMode = 'icons' | 'cards' | 'standard'

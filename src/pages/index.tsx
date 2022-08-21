@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { createContext, useEffect, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
+import MainPage from '../components/mainPage'
 import SettingsButton from '../components/settings/button'
 import SettingsOverlay from '../components/settings/menu'
 import ConfigLoader from '../modules/configLoader'
@@ -57,7 +58,7 @@ const Home: NextPage<Props> = (props: Props) => {
 								setOpenSettings(false)
 							}}
 						/>
-						test
+						<MainPage />
 					</SettingsContext.Provider>
 				</ConfigContext.Provider>
 			</div>
