@@ -29,6 +29,7 @@ const Home: NextPage<Props> = (props: Props) => {
 
 	useEffect(() => {
 		SettingsLoader.getInstance().setSetterFunction(setSettings)
+		setSettings(SettingsLoader.getInstance().reload())
 	}, [])
 
 	const systemDark = useMediaQuery('(prefers-color-scheme: dark)')

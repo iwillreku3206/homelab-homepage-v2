@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Draggable from 'react-draggable'
 import { MdClose } from 'react-icons/md'
 import { useMediaQuery } from 'usehooks-ts'
@@ -10,6 +10,8 @@ import Dropdown from '../common/dropdown'
 const SettingsOverlay = (props: { open: boolean; onClose: () => void }) => {
 	const { open, onClose } = props
 	const settings = useContext(SettingsContext)
+
+	console.log(settings)
 	return (
 		<div
 			className={`${
@@ -50,6 +52,7 @@ const SettingsOverlay = (props: { open: boolean; onClose: () => void }) => {
 						}
 						fullWidth
 						id="colorMode"
+						value={settings.colorMode}
 					/>
 					<h1 className="text-2xl font-extrabold">Display Mode</h1>
 					<label htmlFor="colorMode">
@@ -77,6 +80,7 @@ const SettingsOverlay = (props: { open: boolean; onClose: () => void }) => {
 							})
 						}
 						fullWidth
+						value={settings.displayMode}
 					/>
 					<h1 className="text-2xl font-extrabold">Link Display Mode</h1>
 					<label htmlFor="colorMode">
@@ -93,6 +97,10 @@ const SettingsOverlay = (props: { open: boolean; onClose: () => void }) => {
 								name: 'Icons',
 								value: 'icons',
 							},
+							{
+								name: 'Standard',
+								value: 'standard',
+							},
 						]}
 						onChange={(e) =>
 							SettingsLoader.getInstance().setSettings({
@@ -101,6 +109,7 @@ const SettingsOverlay = (props: { open: boolean; onClose: () => void }) => {
 							})
 						}
 						fullWidth
+						value={settings.linkDisplayMode}
 					/>
 				</div>
 			</div>
